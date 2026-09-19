@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RehamRec - a simple music recommendation interface.">
+    <title>RehamRec</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="title" href="#home" aria-label="RehamRec home">
+            <span>RehamRec</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#history">History</a></li>
+            </ul>
+        </div>
+
+        <button class="btn theme-btn" id="themeToggle" type="button">dark mode</button>
+    </nav>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="search">
+                    <p class="eyebrow">PERSONAL MUSIC RECOMMENDER</p>
+                    <h1>What are you looking for?</h1>
+                    <p class="hero-text">
+                        Tell RehamRec a mood, activity, genre, or feeling and discover a small playlist made for you.
+                    </p>
+
+                    <form class="search-box" id="searchForm">
+                        <input
+                            type="text"
+                            id="query"
+                            placeholder="example: a happy song about life ..."
+                            autocomplete="off"
+                        >
+                        <button class="search-btn" type="submit">Recommend</button>
+                    </form>
+
+                    <div class="surprise-row">
+                        <span>OR</span>
+                        <button class="surprise-btn" id="surprise" type="button">surprise me</button>
+                    </div>
+
+                    <div class="quick-tags" aria-label="Quick searches">
+                        <button type="button" data-query="happy">happy</button>
+                        <button type="button" data-query="study">study</button>
+                        <button type="button" data-query="chill">chill</button>
+                        <button type="button" data-query="workout">workout</button>
+                    </div>
+                </div>
+
+                <div class="hero-card" aria-hidden="true">
+                    <div class="disc">
+                        <div class="disc-center"></div>
+                    </div>
+                    <div class="floating-note note-one">♪</div>
+                    <div class="floating-note note-two">♫</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section recommendations" id="recommendations">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR RESULTS</p>
+                    <h2>Recommended for you</h2>
+                </div>
+                <span class="result-count" id="resultCount">6 songs</span>
+            </div>
+            <div class="cards" id="results"></div>
+            <p class="empty-state" id="emptyState" hidden>No matching songs yet. Try another mood or keyword.</p>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="about-card">
+                <p class="eyebrow">ABOUT REHAMREC</p>
+                <h2>Simple recommendations, your way.</h2>
+                <p>
+                    RehamRec is a lightweight front-end concept for discovering music from natural-language prompts.
+                    Search by mood, genre, activity, or use “surprise me” when you do not know what you want.
+                </p>
+                <div class="feature-grid">
+                    <div><strong>01</strong><span>Search by feeling</span></div>
+                    <div><strong>02</strong><span>Quick mood tags</span></div>
+                    <div><strong>03</strong><span>Keep your history</span></div>
+                    <div><strong>04</strong><span>Mobile friendly</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section history-section" id="history">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RECENT SEARCHES</p>
+                    <h2>Your history</h2>
+                </div>
+                <button class="clear-btn" id="clearHistory" type="button">Clear</button>
+            </div>
+            <div class="history-list" id="historyList">
+                <p class="muted">Your searches will appear here.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>© <span id="year"></span> RehamRec</span>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
