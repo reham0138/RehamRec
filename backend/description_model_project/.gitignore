@@ -1,0 +1,29 @@
+# Environment / secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Dataset / model artifacts (large, regenerable, not meant for git)
+data/*.csv
+models/*.npy
+outputs/
+
+# Keep placeholder folders even though their contents are ignored
+!data/.gitkeep
+!models/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+!models/song_embeddings_1.npy
+!models/song_embeddings_2.npy

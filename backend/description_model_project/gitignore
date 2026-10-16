@@ -1,0 +1,35 @@
+# Environment / secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Dataset CSV is hosted on Kaggle (fetched by download_assets.py)
+data/*.csv
+outputs/
+
+# Notebook checkpoints / logs
+.ipynb_checkpoints/
+*.log
+
+# Embeddings (~76 MB each, under GitHub's 100 MB limit) ARE committed.
+# Any other .npy placed in models/ stays ignored.
+models/*.npy
+!models/song_embeddings_1.npy
+!models/song_embeddings_2.npy
+
+# Keep placeholder folders even though their contents are ignored
+!data/.gitkeep
+!models/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
